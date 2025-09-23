@@ -1,180 +1,331 @@
+/* --- 
+   ESTILO VISUAL CARGOO 
+   Versão Final - Compatível com o HTML baseado na documentação
+--- */
+
+/* --- 1. Configurações Globais e Variáveis de Cor --- */
+:root {
+    --primary-color: #212529;   /* Cinza escuro para textos e fundos */
+    --accent-color: #E85A4F;    /* Laranja vibrante extraído da documentação */
+    --light-bg-color: #f8f9fa; /* Um cinza muito claro para seções alternadas */
+    --white-color: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: #f5f5f5;
-  color: #333;
+    font-family: var(--font-family);
+    line-height: 1.7;
+    background-color: var(--white-color);
+    color: var(--primary-color);
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #002b5c;
-  color: white;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
+section {
+    padding: 100px 0;
 }
 
-.btn-header {
-  background: #f4a300;
-  padding: 10px 20px;
-  border-radius: 6px;
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
 }
 
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+}
+
+/* --- 2. Cabeçalho e Navegação --- */
+.header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- 3. Seção Principal (Hero) --- */
 .hero {
-  background: url('https://source.unsplash.com/1600x600/?truck,road') no-repeat center/cover;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0;
 }
 
-.hero .overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 40px;
-  border-radius: 10px;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
 }
 
 .hero h1 {
-  font-size: 2.5em;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.hero .btn {
-  background: #f4a300;
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 20px;
-  display: inline-block;
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.problema {
-  display: flex;
-  gap: 40px;
-  padding: 50px;
-  background: #f5f5f5;
-  justify-content: center;
+/* --- 4. Botão Principal (Call-to-Action) --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 15px 35px;
+    border-radius: 50px; /* Botão mais arredondado e moderno */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.problema .box {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1;
+.cta-button:hover {
+    background-color: #d94a40; /* Laranja um pouco mais escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.beneficios, .como, .contato {
-  padding: 60px 20px;
-  text-align: center;
+/* --- 5. Seções de Conteúdo --- */
+#about {
+    text-align: center;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+#solution, #benefits {
+    background-color: var(--light-bg-color);
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
+/* --- 6. Cards (Seção 'A Solução') --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
 }
 
-.bg-gray {
-  background: #eee;
+.service-card {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 35px 30px;
+    text-align: center;
 }
 
-.como .steps {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.step {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  flex: 1;
-  min-width: 200px;
+.service-card h3 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
-.depoimento {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  padding: 50px;
+/* --- 7. Seção de Benefícios ('Para Quem') --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    align-items: start;
 }
 
-.depoimento img {
-  border-radius: 50%;
+.benefit-column img {
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
-.cta-final {
-  background: #002b5c;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
+.benefit-column h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+.benefit-column ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-.btn {
-  background: #f4a300;
-  padding: 15px 30px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: white;
+.benefit-column ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
 }
 
-.btn-alt {
-  background: #444;
+.benefit-column ul li::before {
+    content: '*';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
-.contato form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  gap: 10px;
+/* --- 8. Formulário de Contato --- */
+#contact {
+    text-align: center;
 }
 
-button {
-  background: #002b5c;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
 }
 
-footer {
-  background: #222;
-  color: #bbb;
-  text-align: center;
-  padding: 20px;
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(232, 90, 79, 0.2);
+}
+
+/* --- 9. Rodapé --- */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 40px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+}
+
+/* --- 10. Responsividade para Dispositivos Móveis --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Colunas empilhadas em telas menores */
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
