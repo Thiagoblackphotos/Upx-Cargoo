@@ -5,8 +5,8 @@
 
 /* --- 1. Configurações Globais e Variáveis de Cor --- */
 :root {
-    --primary-color: #212529;   /* Cinza escuro para textos e fundos */
-    --accent-color: #E85A4F;    /* Laranja vibrante extraído da documentação */
+    --primary-color: #2C3E50;   /* Cinza escuro para textos e fundos */
+    --accent-color: #F39C12;    /* Laranja vibrante extraído da documentação */
     --light-bg-color: #f8f9fa; /* Um cinza muito claro para seções alternadas */
     --white-color: #ffffff;
     --font-family: 'Poppins', sans-serif;
@@ -154,7 +154,7 @@ h2 {
 }
 
 .cta-button:hover {
-    background-color: #d94a40; /* Laranja um pouco mais escuro */
+    background-color: #F39C12; /* Laranja um pouco mais escuro */
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
