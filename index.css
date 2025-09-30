@@ -144,18 +144,21 @@
         }
 
         /* Hero Section - SEM IMAGEM DE FUNDO */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
-            height: 100vh;
-            color: var(--white-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 0;
-            overflow: hidden;
-        }
+        /* --- 3. Seção Principal (Hero) --- */
+.hero {
+    background-image: url('imagens/tecnologia.jpg'); /* Sugestão: adicione uma imagem de fundo aqui */
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0;
+    background-color: var(--primary-color); /* Cor de fundo caso a imagem não carregue */
+}
 
         /* Efeito de partículas sutil no fundo */
         .hero::before {
