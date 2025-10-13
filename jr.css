@@ -1,9 +1,4 @@
-/* --- 
-   ESTILO VISUAL CARGOO 
-   Versão Final - Compatível com o HTML baseado na documentação
---- */
 
-/* --- 1. Configurações Globais e Variáveis de Cor --- */
 :root {
     --primary-color: #2C3E50;   /* Cinza escuro para textos e fundos */
     --accent-color: #F39C12;    /* Laranja vibrante extraído da documentação */
@@ -328,4 +323,5 @@ h2 {
         flex-direction: column;
         text-align: center;
     }
+
 }
