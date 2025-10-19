@@ -1,0 +1,53 @@
+create database Cargoo
+
+
+CREATE TABLE Clientes (
+    id_cliente INT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,   
+    telefone VARCHAR(20),
+    cpf_cnpj VARCHAR(20) UNIQUE NOT NULL,
+    endereco VARCHAR(255)
+);
+
+
+CREATE TABLE Motoristas (
+    id_motorista INT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20),
+    cpf VARCHAR(20) UNIQUE NOT NULL,
+    tipo_cnh VARCHAR(5) NOT NULL,
+    validade_cnh DATE NOT NULL,
+    endereco VARCHAR(255)
+);
+
+
+CREATE TABLE Veiculos (
+    id_veiculo INT PRIMARY KEY,
+    id_motorista INT NOT NULL,
+    placa VARCHAR(10) UNIQUE NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    documentos VARCHAR(255), 
+    FOREIGN KEY (id_motorista) REFERENCES Motoristas(id_motorista)
+);
+
+
+CREATE TABLE Entregas (
+    id_entrega INT  PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    id_motorista INT NOT NULL,
+    id_veiculo INT NOT NULL,
+    origem VARCHAR(255) NOT NULL,
+    destino VARCHAR(255) NOT NULL,
+    tipo_produto VARCHAR(100),      
+    tipo_entrega VARCHAR(100),      
+    data_solicitacao date, 
+    data_entrega date,
+    status VARCHAR(50) DEFAULT 'Pendente', 
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_motorista) REFERENCES Motoristas(id_motorista),
+    FOREIGN KEY (id_veiculo) REFERENCES Veiculos(id_veiculo)
+);
